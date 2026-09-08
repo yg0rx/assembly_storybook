@@ -1,0 +1,501 @@
+/**
+ * Logo. The lockups are supplied artwork and are never rebuilt, restretched or
+ * reset in substitute type. These rules only frame, size and reverse them.
+ *
+ * Three families, four fields each:
+ *   symbol      the square mark on its own
+ *   primary     symbol and wordmark
+ *   descriptor  symbol, wordmark and CLOUD SOLUTIONS
+ *
+ * Only two files exist per family: the full-colour master and the mono master.
+ * Both reversed states are the colour master under a filter, which is what
+ * guarantees a reversed lockup can never drift from the one it reverses.
+ */
+
+.a-logo-stage {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-core);
+  display: grid;
+  place-items: center;
+  padding: var(--space-8) var(--space-5);
+  background: var(--surface-page);
+}
+
+.a-logo-stage img {
+  width: min(300px, 62%);
+}
+
+/* Each approved lockup and field combination gets its own card, so the valid
+   states can be compared without nesting or merged panels. */
+.a-versions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.a-versions--trio {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.a-versions--quad {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.a-versions--descriptor-pair {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.a-version {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-core);
+  overflow: hidden;
+}
+
+.a-version__ground {
+  display: grid;
+  place-items: center;
+  padding: var(--space-4) var(--space-3);
+  min-height: 88px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.a-version__ground--white {
+  background: var(--surface-page);
+}
+
+.a-version__ground--ink {
+  background: var(--text-primary);
+  border-bottom-color: var(--text-primary);
+}
+
+.a-version__ground--blue {
+  background: var(--action-primary);
+  border-bottom-color: var(--action-primary);
+}
+
+.a-version__ground img {
+  width: min(138px, 58%);
+  height: auto;
+}
+
+/* The symbol is square artwork, so it is sized on its own height rather than
+   on a wordmark width. */
+.a-version__ground--symbol img {
+  width: auto;
+  height: 48px;
+}
+
+.a-version__ground--descriptor {
+  min-height: 116px;
+}
+
+.a-version__ground--descriptor img {
+  width: min(260px, 88%);
+}
+
+/**
+ * The reverse rule: the whole mark paints white, symbol and descriptor
+ * together. Never reverse one part and leave the other in colour.
+ */
+.a-lockup--reversed {
+  filter: brightness(0) invert(1);
+}
+
+.a-version figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-2) var(--space-3);
+  flex: 1;
+}
+
+.a-version figcaption h3 {
+  margin: 0;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+}
+
+.a-version figcaption p {
+  margin: 0;
+  font-size: 10px;
+  line-height: 15px;
+  color: var(--text-secondary);
+}
+
+/**
+ * Symbol in a circle. Profile surfaces crop to a circle whether the artwork
+ * suits one or not. A square inscribed in a circle reaches 70.7% of the
+ * diameter at most, so holding the symbol at 50% leaves the rim clear on every
+ * side and needs no round-specific file. That containment is also what sets
+ * the avatar floor: half of the circle must still clear the 32px symbol
+ * minimum, so the smallest approved circle is 64px.
+ */
+.a-avatars {
+  width: 100%;
+  font-family: var(--font-brand);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.a-avatars__block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.a-avatars__lede {
+  margin: 0;
+  max-width: 68ch;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  color: var(--text-secondary);
+}
+
+.a-avatars__note {
+  margin: 0;
+  max-width: 68ch;
+  font-size: var(--text-label-size);
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.a-avatars__note strong {
+  color: var(--text-primary);
+}
+
+/**
+ * Every size shares one horizontal axis, set by the largest. Each cell gets the
+ * same rail height, so the marks centre on one line and the captions land on
+ * one baseline. Without the fixed rail the cells size to their own contents and
+ * the captions stagger.
+ */
+.a-avatars__ladder {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-7);
+}
+
+.a-avatars__ladder .a-avatar {
+  block-size: 128px;
+  inline-size: auto;
+  min-inline-size: var(--avatar-size);
+}
+
+/* Containment is still half the circle the size would have given it. */
+.a-avatars__ladder .a-avatar img {
+  inline-size: calc(var(--avatar-size) * 0.5);
+}
+
+.a-avatar-cell {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.a-avatar-cell figcaption {
+  font-size: var(--text-label-size);
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.a-avatar {
+  inline-size: var(--avatar-size);
+  block-size: var(--avatar-size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+/* The containment rule, in one declaration. */
+.a-avatar img {
+  inline-size: 50%;
+  block-size: auto;
+}
+
+.a-avatar--brand {
+  background: var(--surface-brand);
+}
+
+/* The ladder carries no ground. With nothing to sit inside, the step from one
+   size to the next is the only thing left to read, which is the point of it. */
+.a-avatar--bare {
+  background: none;
+}
+
+.a-avatar--stop {
+  opacity: 0.45;
+}
+
+.a-avatar-cell--stop figcaption {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.a-logo-threshold {
+  width: 100%;
+  font-family: var(--font-brand);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.a-logo-threshold__rule {
+  padding: var(--space-7);
+  border-radius: var(--radius-core);
+  background: var(--surface-page);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.a-logo-threshold__rule p {
+  margin: 0;
+  max-width: 50ch;
+}
+
+.a-logo-threshold__rail {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.a-logo-threshold__rail article {
+  min-width: 0;
+  padding: var(--space-5);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-core);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Equal cards. The families are compared on optical weight, so none of them is
+   given more room than another. */
+.a-logo-threshold__family--descriptor,
+.a-logo-threshold__family--primary,
+.a-logo-threshold__family--symbol {
+  grid-column: span 4;
+}
+
+/* The stop state follows the same four-plus-eight column rhythm as the three
+   family cards above it. */
+.a-logo-threshold__family--stop {
+  grid-column: 1 / -1;
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--space-4);
+  align-items: start;
+}
+
+.a-logo-threshold__stop-specimen {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.a-logo-threshold__stop-copy {
+  grid-column: span 8;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.a-logo-threshold__stop-copy p {
+  max-width: 62ch;
+}
+
+/* The floor comparison. Eight pixels is the whole argument, so the two sizes
+   sit next to each other rather than being described. */
+.a-logo-threshold__family--stop .a-logo-threshold__stage--stop {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--space-5);
+  min-height: 72px;
+}
+
+.a-floor-compare__item {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.a-floor-compare__item img {
+  inline-size: var(--floor-size);
+  block-size: var(--floor-size);
+}
+
+.a-floor-compare__item figcaption {
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-line);
+  color: var(--text-secondary);
+}
+
+.a-floor-compare__item--fails figcaption {
+  color: var(--color-motif-dot-red);
+}
+
+/* One stage height across the three families, so the only thing that varies is
+   the artwork inside it. */
+.a-logo-threshold__stage {
+  min-height: 132px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.a-logo-threshold__stage img {
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+ * Optical balance, not matched width. The three families run at 3.86:1, 5.36:1
+ * and 1:1, so equal widths would let the square symbol dominate the row while
+ * the two-line descriptor receded. Each mark is scaled until it carries the
+ * same presence as its neighbours, which lands the wordmark lockups near a
+ * common cap height and the symbol near the descriptor's full block height.
+ */
+.a-logo-threshold__stage .a-logo-threshold__descriptor {
+  width: min(258px, 84%);
+}
+
+.a-logo-threshold__stage .a-logo-threshold__primary {
+  width: min(238px, 78%);
+}
+
+.a-logo-threshold__stage .a-logo-threshold__symbol {
+  width: auto;
+  height: 72px;
+}
+
+.a-logo-threshold__stage--symbol img {
+  min-height: 32px;
+}
+
+/* The claim sits at the size of the paragraph under it. Weight alone carries
+   the hierarchy, which is the rule Type states for the whole system. */
+.a-logo-threshold__claim {
+  font-weight: var(--text-label-weight);
+}
+
+/* The rail is a comparison, not a scale drawing. This says so on the page
+   rather than only in the docs description. */
+.a-logo-threshold__caveat {
+  color: var(--text-secondary);
+  font-size: var(--text-label-size);
+  line-height: 1.6;
+  border-left: 1px solid var(--border-brand);
+  padding-left: var(--space-3);
+}
+
+/* Footnote scale. The spec is reference the reader checks, not something the
+   card argues with, so it sits below the label role rather than on it. */
+.a-logo-threshold__spec {
+  margin: 0;
+  margin-top: auto;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border-subtle);
+  display: grid;
+  grid-template-columns: minmax(5.5rem, auto) minmax(0, 1fr);
+  gap: var(--space-3);
+}
+
+/* Label over value. Side by side, the long applications list wrapped into a
+   ragged hanging indent beside a two-word ratio, which read as broken. */
+.a-logo-threshold__spec > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.a-logo-threshold__spec dt {
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: var(--text-label-track);
+  font-weight: var(--text-label-weight);
+  text-transform: uppercase;
+  color: var(--text-brand);
+}
+
+.a-logo-threshold__spec dd {
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+}
+
+.a-logo-threshold__rail h3,
+.a-logo-threshold__rail p {
+  margin: 0;
+}
+
+.a-logo-threshold__rail h3 {
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.a-logo-threshold__rail p {
+  color: var(--text-secondary);
+  font-size: var(--text-label-size);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .a-versions--quad {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .a-logo-threshold__rail {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .a-logo-threshold__family--descriptor,
+  .a-logo-threshold__family--primary,
+  .a-logo-threshold__family--symbol,
+  .a-logo-threshold__family--stop {
+    grid-column: 1;
+  }
+
+  .a-logo-threshold__family--stop {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--space-5);
+  }
+
+  .a-logo-threshold__stop-specimen,
+  .a-logo-threshold__stop-copy {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 700px) {
+  .a-versions--trio {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .a-versions,
+  .a-versions--quad,
+  .a-versions--descriptor-pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

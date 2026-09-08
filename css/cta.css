@@ -1,0 +1,140 @@
+/**
+ * CTA. One primary per surface. The other tiers step back through fill and
+ * border only, so a surface never gains a second colour.
+ *
+ * A CTA that navigates is an <a href>. A CTA that acts is a <button>.
+ */
+
+.a-cta {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  border: 1px solid var(--action-primary);
+  border-radius: var(--radius-core);
+  background: transparent;
+  color: var(--text-primary);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s var(--ease);
+}
+
+.a-cta__arrow {
+  font-size: 20px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.a-cta__arrow svg {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.a-cta--primary {
+  background: var(--action-primary);
+  border-color: var(--action-primary);
+  color: var(--action-primary-fg);
+}
+
+.a-cta--primary:hover {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.a-cta--secondary {
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.a-cta--secondary .a-cta__arrow {
+  color: var(--text-brand);
+}
+
+.a-cta--secondary:hover {
+  background: var(--action-primary);
+  color: var(--color-blue-100);
+}
+
+.a-cta--secondary:hover .a-cta__arrow {
+  color: var(--color-blue-100);
+}
+
+.a-cta--text {
+  border-color: transparent;
+  border-bottom-color: var(--action-primary);
+  border-radius: 0;
+  padding-inline: 0;
+}
+
+.a-cta--text:hover {
+  padding-left: var(--space-3);
+}
+
+.a-cta--campaign {
+  background: var(--surface-page);
+  color: var(--text-primary);
+}
+
+.a-cta--campaign .a-cta__path {
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.a-cta--campaign:not(.a-cta--solid) .a-cta__arrow {
+  color: var(--text-brand);
+}
+
+.a-cta--solid {
+  background: var(--gradient-campaign);
+  border-color: transparent;
+  color: var(--action-primary-fg);
+}
+
+.a-cta--solid .a-cta__path {
+  color: color-mix(in srgb, var(--action-primary-fg) 72%, transparent);
+}
+
+/* The one exception to the single-colour rule, and it earns it twice: pill
+   geometry plus the only action carrying accent-ai. */
+.a-cta--ai {
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--accent-ai) 9%, transparent);
+  border-color: color-mix(in srgb, var(--accent-ai) 45%, transparent);
+  color: var(--accent-ai);
+}
+
+.a-cta--ai .a-cta__label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.a-cta--ai:hover {
+  background: var(--accent-ai);
+  border-color: var(--accent-ai-strong);
+  color: var(--accent-ai-fg);
+}
+
+.a-cta[aria-disabled='true'],
+.a-cta:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.a-catalog--cta-system .a-cta {
+  min-height: calc(var(--space-9) - var(--space-1));
+  gap: calc(var(--space-3) * 0.85);
+  padding: calc(var(--space-3) * 0.85) calc(var(--space-5) * 0.85);
+  font-size: 85%;
+}
+
+.a-catalog--cta-system .a-cta__arrow {
+  font-size: 17px;
+}

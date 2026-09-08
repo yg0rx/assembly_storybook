@@ -1,0 +1,83 @@
+/**
+ * Index row. A numbered item, its name, and the one line that says what it is,
+ * on a single line so a list of them scans as a table of contents.
+ *
+ * Why this exists: the brand book already uses this device three times and
+ * builds it differently each time. The challenge cards run "01 · Understand"
+ * as an eyebrow above a heading. The content law runs "01 Founder problem" as
+ * a tag chip. The initiative register runs "Initiative 01 · Live". Same idea,
+ * three constructions.
+ *
+ * Layout borrowed from beautiful-ui-five.vercel.app, which puts the numeral,
+ * the name and the description on one line. It turns a stack of headings into
+ * something you can run your eye down.
+ *
+ * Deliberately not borrowed: their numeral is monospace. Rubik sets everything
+ * the reader sees, including every number, so the numeral here is Rubik with
+ * tabular figures. Monospace stays what typography.md says it is, a utility for
+ * the code motif and token names.
+ */
+
+.a-index {
+  display: flex;
+  flex-direction: column;
+}
+
+.a-index__row {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--border-subtle);
+  text-decoration: none;
+  color: inherit;
+}
+
+.a-index__row:first-child {
+  border-top: 0;
+}
+
+.a-index__num {
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text-brand);
+}
+
+.a-index__name {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.a-index__what {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--text-secondary);
+  min-width: 0;
+}
+
+/* As a link list. The whole row is the target, not just the name. */
+a.a-index__row:hover .a-index__name {
+  color: var(--text-brand);
+}
+
+a.a-index__row:hover .a-index__what {
+  color: var(--text-primary);
+}
+
+/* Stacked, for narrow columns where the description cannot share the line. */
+@media (max-width: 700px) {
+  .a-index__row {
+    grid-template-columns: auto minmax(0, 1fr);
+    row-gap: var(--space-1);
+  }
+
+  .a-index__what {
+    grid-column: 2;
+  }
+}

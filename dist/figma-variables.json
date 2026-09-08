@@ -1,0 +1,640 @@
+{
+  "$meta": {
+    "generatedFrom": "tokens/tokens.source.json",
+    "version": "1.7.0"
+  },
+  "collections": [
+    {
+      "name": "Primitives",
+      "modes": [
+        "Value"
+      ],
+      "variables": [
+        {
+          "name": "color/blue-100",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#EFF5FF"
+          },
+          "description": "Assembly Cloud, brand ground"
+        },
+        {
+          "name": "color/blue-300",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#88A4FF"
+          },
+          "description": "Text on dark, muted accents"
+        },
+        {
+          "name": "color/blue-500",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#283DFF"
+          },
+          "description": "Gradient mid stop"
+        },
+        {
+          "name": "color/blue-600",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#0044FF"
+          },
+          "description": "Focus ring, hover lift"
+        },
+        {
+          "name": "color/blue-700",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#0028FF"
+          },
+          "description": "Assembly Blue, canonical"
+        },
+        {
+          "name": "color/blue-800",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#000279"
+          },
+          "description": "Campaign gradient end"
+        },
+        {
+          "name": "color/blue-900",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#00023F"
+          },
+          "description": "Dark brand surface"
+        },
+        {
+          "name": "color/ink-100",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#F4F4F6"
+          },
+          "description": "Raised surface, light"
+        },
+        {
+          "name": "color/ink-400",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#8A8A94"
+          },
+          "description": "System labels"
+        },
+        {
+          "name": "color/ink-500",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#5C5C68"
+          },
+          "description": "Tertiary copy"
+        },
+        {
+          "name": "color/ink-700",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#4A4A55"
+          },
+          "description": "Secondary copy"
+        },
+        {
+          "name": "color/ink-900",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#161615"
+          },
+          "description": "Primary copy"
+        },
+        {
+          "name": "color/ink-950",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#08080B"
+          },
+          "description": "Dark page ground"
+        },
+        {
+          "name": "color/white",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#FFFFFF"
+          },
+          "description": "Preferred logo field"
+        },
+        {
+          "name": "color/amber-400",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#FCA515"
+          },
+          "description": "AI accent, dark theme"
+        },
+        {
+          "name": "color/amber-500",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#FF8100"
+          },
+          "description": "AI accent, light theme"
+        },
+        {
+          "name": "color/violet-500",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#5500F9"
+          },
+          "description": "Compute visualisation only"
+        },
+        {
+          "name": "radius/radius-300",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "Value": 10
+          },
+          "description": "Inputs"
+        },
+        {
+          "name": "radius/radius-core",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "Value": 8
+          },
+          "description": "Approved core UI corner"
+        },
+        {
+          "name": "radius/radius-400",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "Value": 16
+          },
+          "description": "Cards inside a panel"
+        },
+        {
+          "name": "radius/radius-600",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "Value": 24
+          },
+          "description": "Panels"
+        },
+        {
+          "name": "radius/radius-full",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "Value": 999
+          },
+          "description": "Actions and metadata tags"
+        },
+        {
+          "name": "space/space-1",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "Value": 4
+          },
+          "description": "Grid base"
+        },
+        {
+          "name": "space/space-2",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "Value": 8
+          }
+        },
+        {
+          "name": "space/space-3",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "Value": 12
+          }
+        },
+        {
+          "name": "space/space-4",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "Value": 16
+          }
+        },
+        {
+          "name": "space/space-5",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "Value": 20
+          }
+        },
+        {
+          "name": "space/space-6",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "Value": 24
+          }
+        },
+        {
+          "name": "space/space-7",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "Value": 28
+          }
+        },
+        {
+          "name": "space/space-8",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "Value": 36
+          }
+        },
+        {
+          "name": "space/space-9",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "Value": 48
+          }
+        },
+        {
+          "name": "space/space-10",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "Value": 72
+          },
+          "description": "Section rhythm"
+        },
+        {
+          "name": "space/space-11",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "Value": 96
+          },
+          "description": "Section rhythm"
+        },
+        {
+          "name": "font/font-brand",
+          "type": "STRING",
+          "valuesByMode": {
+            "Value": "Rubik, Arial, sans-serif"
+          },
+          "description": "Everything the reader sees"
+        },
+        {
+          "name": "font/font-editorial",
+          "type": "STRING",
+          "valuesByMode": {
+            "Value": "'Nunito Sans', sans-serif"
+          },
+          "description": "Long-form passages"
+        },
+        {
+          "name": "font/font-partner",
+          "type": "STRING",
+          "valuesByMode": {
+            "Value": "'Amazon Ember', sans-serif"
+          },
+          "description": "AWS co-brand contexts only"
+        },
+        {
+          "name": "font/font-mono",
+          "type": "STRING",
+          "valuesByMode": {
+            "Value": "ui-monospace, 'SF Mono', Menlo, monospace"
+          },
+          "description": "Code motif and token names. A utility, never a brand family."
+        },
+        {
+          "name": "color/partner-aws-orange",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#FF7600"
+          },
+          "description": "AWS services and Well-Architected credential marker"
+        },
+        {
+          "name": "color/partner-aws-violet",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#913DF4"
+          },
+          "description": "AWS Generative AI credential marker"
+        },
+        {
+          "name": "color/partner-aws-blue",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#3C92F9"
+          },
+          "description": "AWS technical accreditation marker"
+        },
+        {
+          "name": "color/partner-aws-slate",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#343F4D"
+          },
+          "description": "AWS practitioner credential marker"
+        },
+        {
+          "name": "color/motif-dot-red",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#E05A4F"
+          },
+          "description": "Code motif window dot"
+        },
+        {
+          "name": "color/motif-dot-amber",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#EDC24A"
+          },
+          "description": "Code motif window dot"
+        },
+        {
+          "name": "color/motif-dot-green",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#6FBF5B"
+          },
+          "description": "Code motif window dot"
+        },
+        {
+          "name": "color/ink-450",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#6F6F7A"
+          },
+          "description": "Muted text. Clears AA on white and on the raised surface."
+        },
+        {
+          "name": "color/amber-600",
+          "type": "COLOR",
+          "valuesByMode": {
+            "Value": "#B95D00"
+          },
+          "description": "Accessible GenAI control boundary on light grounds."
+        }
+      ]
+    },
+    {
+      "name": "Semantic",
+      "modes": [
+        "Light",
+        "Dark"
+      ],
+      "variables": [
+        {
+          "name": "alias/surface-page",
+          "type": "COLOR",
+          "description": "Root background",
+          "valuesByMode": {
+            "Light": {
+              "alias": "color/white",
+              "resolved": "#FFFFFF",
+              "opacity": 1
+            },
+            "Dark": {
+              "alias": "color/ink-950",
+              "resolved": "#08080B",
+              "opacity": 1
+            }
+          }
+        },
+        {
+          "name": "alias/surface-raised",
+          "type": "COLOR",
+          "description": "Cards and panels [Conflict: see knowledge/conflicts.md]",
+          "valuesByMode": {
+            "Light": {
+              "alias": "color/ink-100",
+              "resolved": "#F4F4F6",
+              "opacity": 1
+            },
+            "Dark": {
+              "alias": "color/#131318",
+              "resolved": "#131318",
+              "opacity": 1
+            }
+          }
+        },
+        {
+          "name": "alias/surface-brand",
+          "type": "COLOR",
+          "description": "Tinted brand sections",
+          "valuesByMode": {
+            "Light": {
+              "alias": "color/blue-100",
+              "resolved": "#EFF5FF",
+              "opacity": 1
+            },
+            "Dark": {
+              "alias": "color/blue-900",
+              "resolved": "#00023F",
+              "opacity": 1
+            }
+          }
+        },
+        {
+          "name": "alias/border-subtle",
+          "type": "COLOR",
+          "description": "Hairlines and table rules [Conflict: see knowledge/conflicts.md]",
+          "valuesByMode": {
+            "Light": {
+              "alias": "color/ink-900",
+              "resolved": "#161615",
+              "opacity": 0.12
+            },
+            "Dark": {
+              "alias": "color/blue-100",
+              "resolved": "#EFF5FF",
+              "opacity": 0.12
+            }
+          }
+        },
+        {
+          "name": "alias/border-brand",
+          "type": "COLOR",
+          "description": "Label pills, focus outlines [Conflict: see knowledge/conflicts.md]",
+          "valuesByMode": {
+            "Light": {
+              "alias": "color/blue-700",
+              "resolved": "#0028FF",
+              "opacity": 0.35
+            },
+            "Dark": {
+              "alias": "color/blue-300",
+              "resolved": "#88A4FF",
+              "opacity": 0.4
+            }
+          }
+        },
+        {
+          "name": "alias/text-primary",
+          "type": "COLOR",
+          "description": "Display through body",
+          "valuesByMode": {
+            "Light": {
+              "alias": "color/ink-900",
+              "resolved": "#161615",
+              "opacity": 1
+            },
+            "Dark": {
+              "alias": "color/blue-100",
+              "resolved": "#EFF5FF",
+              "opacity": 1
+            }
+          }
+        },
+        {
+          "name": "alias/text-secondary",
+          "type": "COLOR",
+          "description": "Supporting copy [Conflict: see knowledge/conflicts.md]",
+          "valuesByMode": {
+            "Light": {
+              "alias": "color/ink-700",
+              "resolved": "#4A4A55",
+              "opacity": 1
+            },
+            "Dark": {
+              "alias": "color/#A7A7B4",
+              "resolved": "#A7A7B4",
+              "opacity": 1
+            }
+          }
+        },
+        {
+          "name": "alias/text-muted",
+          "type": "COLOR",
+          "description": "System labels",
+          "valuesByMode": {
+            "Light": {
+              "alias": "color/ink-450",
+              "resolved": "#6F6F7A",
+              "opacity": 1
+            },
+            "Dark": {
+              "alias": "color/ink-400",
+              "resolved": "#8A8A94",
+              "opacity": 1
+            }
+          }
+        },
+        {
+          "name": "alias/text-brand",
+          "type": "COLOR",
+          "description": "Links and brand emphasis",
+          "valuesByMode": {
+            "Light": {
+              "alias": "color/blue-700",
+              "resolved": "#0028FF",
+              "opacity": 1
+            },
+            "Dark": {
+              "alias": "color/blue-300",
+              "resolved": "#88A4FF",
+              "opacity": 1
+            }
+          }
+        },
+        {
+          "name": "alias/action-primary",
+          "type": "COLOR",
+          "description": "Primary CTA field",
+          "valuesByMode": {
+            "Light": {
+              "alias": "color/blue-700",
+              "resolved": "#0028FF",
+              "opacity": 1
+            },
+            "Dark": {
+              "alias": "color/blue-700",
+              "resolved": "#0028FF",
+              "opacity": 1
+            }
+          }
+        },
+        {
+          "name": "alias/action-primary-fg",
+          "type": "COLOR",
+          "description": "Label on the primary CTA",
+          "valuesByMode": {
+            "Light": {
+              "alias": "color/white",
+              "resolved": "#FFFFFF",
+              "opacity": 1
+            },
+            "Dark": {
+              "alias": "color/white",
+              "resolved": "#FFFFFF",
+              "opacity": 1
+            }
+          }
+        },
+        {
+          "name": "alias/accent-ai",
+          "type": "COLOR",
+          "description": "GenAI capability fill",
+          "valuesByMode": {
+            "Light": {
+              "alias": "color/amber-500",
+              "resolved": "#FF8100",
+              "opacity": 1
+            },
+            "Dark": {
+              "alias": "color/amber-400",
+              "resolved": "#FCA515",
+              "opacity": 1
+            }
+          }
+        },
+        {
+          "name": "alias/accent-ai-fg",
+          "type": "COLOR",
+          "description": "Text on a GenAI fill",
+          "valuesByMode": {
+            "Light": {
+              "alias": "color/ink-900",
+              "resolved": "#161615",
+              "opacity": 1
+            },
+            "Dark": {
+              "alias": "color/ink-950",
+              "resolved": "#08080B",
+              "opacity": 1
+            }
+          }
+        },
+        {
+          "name": "alias/accent-ai-strong",
+          "type": "COLOR",
+          "description": "Accessible GenAI control boundary",
+          "valuesByMode": {
+            "Light": {
+              "alias": "color/amber-600",
+              "resolved": "#B95D00",
+              "opacity": 1
+            },
+            "Dark": {
+              "alias": "color/amber-400",
+              "resolved": "#FCA515",
+              "opacity": 1
+            }
+          }
+        },
+        {
+          "name": "alias/focus-ring",
+          "type": "COLOR",
+          "description": "2px offset focus outline",
+          "valuesByMode": {
+            "Light": {
+              "alias": "color/blue-600",
+              "resolved": "#0044FF",
+              "opacity": 1
+            },
+            "Dark": {
+              "alias": "color/blue-300",
+              "resolved": "#88A4FF",
+              "opacity": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

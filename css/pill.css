@@ -1,0 +1,151 @@
+/**
+ * Pill. Classifies something that already exists, never carries the message.
+ * A pill is a <span>. If it needs to be clickable it is a CTA, not a pill.
+ */
+
+.a-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--action-primary);
+  border-radius: var(--radius-core);
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.a-pill--solid {
+  background: var(--action-primary);
+  border-color: var(--action-primary);
+  color: var(--color-blue-100);
+}
+
+.a-pill--soft {
+  background: color-mix(in srgb, var(--action-primary) 5%, transparent);
+  border-color: transparent;
+  color: var(--text-brand);
+}
+
+/* accent-ai is a reserved meaning, not a second brand colour. The label must
+   always say GenAI: the hue is never the only carrier. */
+.a-pill--ai {
+  background: color-mix(in srgb, var(--accent-ai) 9%, transparent);
+  border-color: transparent;
+  color: var(--accent-ai);
+}
+
+/* 24px minimum keeps this at the WCAG 2.2 target size floor exactly. */
+.a-pill--micro {
+  min-height: 24px;
+  padding: var(--space-1) var(--space-2);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.a-pill--metric {
+  min-height: 44px;
+  padding: var(--space-3) var(--space-5);
+  background: var(--action-primary);
+  border-color: var(--action-primary);
+  color: var(--color-blue-100);
+  font-size: 15px;
+}
+
+.a-pill--announcement {
+  background: var(--gradient-announcement);
+  border-color: transparent;
+  color: var(--action-primary-fg);
+}
+
+/**
+ * Measurement bar. Read-only. It reports what the pill actually rendered as,
+ * so the reader can see that switching variant moves the geometry to a fixed
+ * step rather than to anything they chose.
+ */
+.a-pill-measure {
+  width: 100%;
+  font-family: var(--font-brand);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.a-pill-measure__rule {
+  position: relative;
+  min-width: var(--space-9);
+  height: 1px;
+  margin-top: var(--space-4);
+  background: var(--action-primary);
+}
+
+/* End ticks, drawn from the rule so the measured span reads as a dimension
+   rather than as an underline. */
+.a-pill-measure__rule::before,
+.a-pill-measure__rule::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  width: 1px;
+  height: 7px;
+  background: var(--action-primary);
+}
+
+.a-pill-measure__rule::before {
+  left: 0;
+}
+
+.a-pill-measure__rule::after {
+  right: 0;
+}
+
+/* Above the rule. Below it, the width label landed on top of the spec row. */
+.a-pill-measure__rule span {
+  position: absolute;
+  bottom: var(--space-2);
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-brand);
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.a-pill-measure__spec {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-5);
+}
+
+.a-pill-measure__spec > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.a-pill-measure__spec dt {
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: var(--text-label-weight);
+  letter-spacing: var(--text-label-track);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.a-pill-measure__spec dd {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.45;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+}

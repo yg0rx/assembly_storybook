@@ -1,0 +1,239 @@
+/**
+ * Letter Grafism. The wordmark enlarged past legibility and cropped, so the
+ * letterform reads as a field rather than as a word.
+ *
+ * The six delivered tiles are reproduced at their original 870:1081 aspect ratio.
+ * They are never rebuilt, stretched, recoloured or reset in substitute type.
+ * Crop, gradient and direction of movement are what make each composition
+ * specific, so a tile is used whole or cropped by the band rule below.
+ */
+
+.a-letter-grafism,
+.a-letter-grafism-system,
+.a-pattern-band-demo {
+  font-family: var(--font-brand);
+}
+
+.a-letter-grafism {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
+  gap: var(--space-4);
+  background: var(--surface-page);
+  padding: var(--space-4);
+}
+
+.a-letter-grafism__copy {
+  min-width: 0;
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+
+.a-letter-grafism__copy h2,
+.a-letter-grafism__copy p,
+.a-letter-grafism__copy dl {
+  margin: 0;
+}
+
+/* Title role, not intro. Beside a letterform blown past reading size, an intro
+   headline reads as a caption on the artwork rather than the claim about it.
+   Weight stays 400: the size carries this, not the stroke. */
+.a-letter-grafism__copy h2 {
+  max-width: 18ch;
+  color: var(--text-primary);
+  font-size: var(--text-intro-size);
+  line-height: var(--text-intro-line);
+  letter-spacing: var(--text-intro-track);
+  font-weight: var(--text-title-weight);
+  text-wrap: balance;
+}
+
+.a-letter-grafism__copy > p {
+  max-width: 52ch;
+  color: var(--text-secondary);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+}
+
+.a-letter-grafism__copy dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.a-letter-grafism__copy dl div {
+  padding-top: var(--space-3);
+}
+
+.a-letter-grafism__copy dt {
+  color: var(--text-brand);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-line);
+  letter-spacing: var(--text-label-track);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.a-letter-grafism__copy dd {
+  margin: var(--space-2) 0 0;
+  color: var(--text-secondary);
+  font-size: var(--text-label-size);
+  line-height: 1.5;
+}
+
+.a-letter-grafism__master {
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.a-letter-grafism__master img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 870 / 1081;
+  object-fit: cover;
+  border-radius: var(--radius-core);
+}
+
+.a-letter-grafism__master figcaption,
+.a-pattern-tile figcaption {
+  color: var(--text-secondary);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-line);
+}
+
+/**
+ * The caption aligns to the artwork, not to the file. Pattern 06 carries pale
+ * gradient down its left edge, so the blue starts 55px into a 496px render,
+ * which is 11.1% of the width. Expressed as a percentage because the image is
+ * width: 100%, so the inset tracks it at every breakpoint. Re-measure if the
+ * master is ever re-exported with different margins.
+ */
+.a-letter-grafism__master figcaption {
+  margin-inline-start: 11.1%;
+}
+
+.a-letter-grafism__master figcaption span,
+.a-pattern-tile figcaption span {
+  margin-right: var(--space-2);
+  color: var(--text-brand);
+  font-weight: 500;
+}
+
+.a-letter-grafism-system {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.a-letter-grafism-system > header {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.a-letter-grafism-system > header p {
+  margin: 0;
+  max-width: 64ch;
+}
+
+.a-letter-grafism-system > header > p:last-child {
+  color: var(--text-secondary);
+}
+
+.a-pattern-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.a-pattern-tile {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.a-pattern-tile img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 870 / 1081;
+  object-fit: cover;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-core);
+  background: var(--surface-page);
+}
+
+/**
+ * Band crop. Taken out of flow so it contributes no intrinsic height: the
+ * element beside it sets the row height and the pattern absorbs what is left.
+ */
+.a-pattern-tile--band {
+  flex: 1;
+  min-height: 160px;
+  position: relative;
+}
+
+.a-pattern-tile--band img {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.a-pattern-band-demo {
+  width: 100%;
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 0.7fr);
+  gap: var(--space-4);
+  padding: var(--space-4);
+}
+
+.a-pattern-band-demo > div {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.a-pattern-band-demo h3,
+.a-pattern-band-demo p {
+  margin: 0;
+}
+
+.a-pattern-band-demo h3 {
+  color: var(--text-brand);
+  font-size: var(--text-intro-size);
+  line-height: var(--text-intro-line);
+  font-weight: 400;
+}
+
+.a-pattern-band-demo p {
+  color: var(--text-secondary);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+}
+
+@media (max-width: 760px) {
+  .a-letter-grafism,
+  .a-pattern-band-demo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .a-letter-grafism__copy dl {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .a-pattern-board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

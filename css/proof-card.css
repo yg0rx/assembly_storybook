@@ -1,0 +1,49 @@
+/**
+ * Proof card. A gradient band carrying one verified number and its context.
+ *
+ * Source: assembly_fixes/fragments/frag-02.png. The gradient is the card. There
+ * is no panel, no tint and no border behind it, because a second blue ground
+ * would compete with the fill that makes the card recognisable.
+ */
+
+.a-proof-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  font-family: var(--font-brand);
+}
+
+.a-proof-card {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-core);
+  background: var(--gradient-proof);
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+/* The value sits on the dark stop of the gradient and is the only part set in
+   bold. It is what the reader is meant to leave with. */
+.a-proof-card__value {
+  color: var(--color-blue-100);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* The label runs into the light half, so it is set in the darkest blue rather
+   than the brand blue. Brand blue over the middle of this gradient is close to
+   invisible. */
+.a-proof-card__label {
+  color: var(--color-blue-900);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  font-weight: 400;
+}
+
+@media (max-width: 760px) {
+  .a-proof-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

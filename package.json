@@ -1,0 +1,46 @@
+{
+  "name": "assemblycloud-brand-system",
+  "version": "1.7.0",
+  "description": "The Assembly Cloud Solutions design system: tokens, CSS components, Storybook and the agent-facing knowledge pack.",
+  "type": "module",
+  "private": true,
+  "license": "UNLICENSED",
+  "files": [
+    "dist",
+    "css",
+    "knowledge"
+  ],
+  "exports": {
+    "./tokens.css": "./dist/tokens.css",
+    "./tokens.json": "./dist/tokens.json",
+    "./theme.css": "./dist/theme.css",
+    "./css": "./css/index.css"
+  },
+  "scripts": {
+    "build": "npm run build:tokens && npm run build:storybook",
+    "build:tokens": "node tokens/build.mjs",
+    "build:storybook": "storybook build",
+    "dev": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006",
+    "lint:tokens": "node scripts/lint-tokens.mjs",
+    "test:contrast": "node scripts/test-contrast.mjs",
+    "test:a11y": "node scripts/test-a11y.mjs",
+    "test": "npm run lint:tokens && npm run test:contrast",
+    "check": "npm run build:tokens && npm run test",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^10.5.7",
+    "@storybook/addon-docs": "^10.5.7",
+    "@storybook/addon-mcp": "^0.7.0",
+    "@storybook/html-vite": "^10.5.7",
+    "@storybook/mcp": "^0.8.0",
+    "axe-core": "^4.13.0",
+    "husky": "^9.1.7",
+    "playwright": "^1.62.1",
+    "storybook": "^10.5.7"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

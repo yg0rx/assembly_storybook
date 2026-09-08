@@ -1,0 +1,24 @@
+#!/bin/sh
+# Guardrails that run before anything lands.
+#
+# The token build runs first because tokens.css and contrast-matrix.md are
+# generated artefacts: if the source moved and the outputs did not, the commit
+# would carry a stale dist/. Building first means the diff is always complete.
+
+set -e
+
+echo "→ building tokens"
+npm run build:tokens --silent
+
+echo "→ linting tokens"
+npm run lint:tokens --silent
+
+echo "→ measuring contrast"
+npm run test:contrast --silent
+
+# Generated files may have changed during the build. Stage them so the commit
+# carries the values and their consequences together.
+git add dist/ knowledge/contrast-matrix.md 2>/dev/null || true
+
+# The a11y suite needs a browser and a Storybook build, which is too slow for a
+# commit hook. It runs in CI and can be run by hand with `npm run test:a11y`.

@@ -1,0 +1,736 @@
+{
+  "$meta": {
+    "name": "Assembly Cloud Solutions design tokens",
+    "version": "1.7.0",
+    "description": "The single source of truth for the Assembly brand system. Every generated format in dist/ is built from this file. Nothing downstream may declare a value that is not here.",
+    "derivedFrom": "projects/assembly_brand_book/brand-system.html (v1.6) and knowledge/ (v1.7)",
+    "markers": {
+      "approved": "Traceable to a supplied master or a stated brand direction.",
+      "derived": "A consistent application of an approved rule.",
+      "proposed": "Inferred from measurement, not yet signed off.",
+      "conflict": "Two sources in the system disagree. Recorded, not resolved."
+    }
+  },
+  "primitives": [
+    {
+      "group": "color",
+      "name": "blue-100",
+      "value": "#EFF5FF",
+      "use": "Assembly Cloud, brand ground",
+      "status": "approved"
+    },
+    {
+      "group": "color",
+      "name": "blue-300",
+      "value": "#88A4FF",
+      "use": "Text on dark, muted accents",
+      "status": "approved"
+    },
+    {
+      "group": "color",
+      "name": "blue-500",
+      "value": "#283DFF",
+      "use": "Gradient mid stop",
+      "status": "approved"
+    },
+    {
+      "group": "color",
+      "name": "blue-600",
+      "value": "#0044FF",
+      "use": "Focus ring, hover lift",
+      "status": "approved"
+    },
+    {
+      "group": "color",
+      "name": "blue-700",
+      "value": "#0028FF",
+      "use": "Assembly Blue, canonical",
+      "status": "approved"
+    },
+    {
+      "group": "color",
+      "name": "blue-800",
+      "value": "#000279",
+      "use": "Campaign gradient end",
+      "status": "approved"
+    },
+    {
+      "group": "color",
+      "name": "blue-900",
+      "value": "#00023F",
+      "use": "Dark brand surface",
+      "status": "approved"
+    },
+    {
+      "group": "color",
+      "name": "ink-100",
+      "value": "#F4F4F6",
+      "use": "Raised surface, light",
+      "status": "approved"
+    },
+    {
+      "group": "color",
+      "name": "ink-400",
+      "value": "#8A8A94",
+      "use": "System labels",
+      "status": "approved"
+    },
+    {
+      "group": "color",
+      "name": "ink-500",
+      "value": "#5C5C68",
+      "use": "Tertiary copy",
+      "status": "approved"
+    },
+    {
+      "group": "color",
+      "name": "ink-700",
+      "value": "#4A4A55",
+      "use": "Secondary copy",
+      "status": "approved"
+    },
+    {
+      "group": "color",
+      "name": "ink-900",
+      "value": "#161615",
+      "use": "Primary copy",
+      "status": "approved"
+    },
+    {
+      "group": "color",
+      "name": "ink-950",
+      "value": "#08080B",
+      "use": "Dark page ground",
+      "status": "approved"
+    },
+    {
+      "group": "color",
+      "name": "white",
+      "value": "#FFFFFF",
+      "use": "Preferred logo field",
+      "status": "approved"
+    },
+    {
+      "group": "color",
+      "name": "amber-400",
+      "value": "#FCA515",
+      "use": "AI accent, dark theme",
+      "status": "approved"
+    },
+    {
+      "group": "color",
+      "name": "amber-500",
+      "value": "#FF8100",
+      "use": "AI accent, light theme",
+      "status": "approved"
+    },
+    {
+      "group": "color",
+      "name": "violet-500",
+      "value": "#5500F9",
+      "use": "Compute visualisation only",
+      "status": "approved"
+    },
+    {
+      "group": "radius",
+      "name": "radius-300",
+      "value": "10px",
+      "use": "Inputs",
+      "status": "approved"
+    },
+    {
+      "group": "radius",
+      "name": "radius-core",
+      "value": "8px",
+      "use": "Approved core UI corner",
+      "status": "approved"
+    },
+    {
+      "group": "radius",
+      "name": "radius-400",
+      "value": "16px",
+      "use": "Cards inside a panel",
+      "status": "approved"
+    },
+    {
+      "group": "radius",
+      "name": "radius-600",
+      "value": "24px",
+      "use": "Panels",
+      "status": "approved"
+    },
+    {
+      "group": "radius",
+      "name": "radius-full",
+      "value": "999px",
+      "use": "Actions and metadata tags",
+      "status": "approved"
+    },
+    {
+      "group": "space",
+      "name": "space-1",
+      "value": "4px",
+      "use": "Grid base",
+      "status": "approved"
+    },
+    {
+      "group": "space",
+      "name": "space-2",
+      "value": "8px",
+      "use": "",
+      "status": "approved"
+    },
+    {
+      "group": "space",
+      "name": "space-3",
+      "value": "12px",
+      "use": "",
+      "status": "approved"
+    },
+    {
+      "group": "space",
+      "name": "space-4",
+      "value": "16px",
+      "use": "",
+      "status": "approved"
+    },
+    {
+      "group": "space",
+      "name": "space-5",
+      "value": "20px",
+      "use": "",
+      "status": "approved"
+    },
+    {
+      "group": "space",
+      "name": "space-6",
+      "value": "24px",
+      "use": "",
+      "status": "approved"
+    },
+    {
+      "group": "space",
+      "name": "space-7",
+      "value": "28px",
+      "use": "",
+      "status": "approved"
+    },
+    {
+      "group": "space",
+      "name": "space-8",
+      "value": "36px",
+      "use": "",
+      "status": "approved"
+    },
+    {
+      "group": "space",
+      "name": "space-9",
+      "value": "48px",
+      "use": "",
+      "status": "approved"
+    },
+    {
+      "group": "space",
+      "name": "space-10",
+      "value": "72px",
+      "use": "Section rhythm",
+      "status": "approved"
+    },
+    {
+      "group": "space",
+      "name": "space-11",
+      "value": "96px",
+      "use": "Section rhythm",
+      "status": "approved"
+    },
+    {
+      "group": "font",
+      "name": "font-brand",
+      "value": "Rubik, Arial, sans-serif",
+      "use": "Everything the reader sees",
+      "status": "approved"
+    },
+    {
+      "group": "font",
+      "name": "font-editorial",
+      "value": "'Nunito Sans', sans-serif",
+      "use": "Long-form passages",
+      "status": "approved"
+    },
+    {
+      "group": "font",
+      "name": "font-partner",
+      "value": "'Amazon Ember', sans-serif",
+      "use": "AWS co-brand contexts only",
+      "status": "approved"
+    },
+    {
+      "group": "font",
+      "name": "font-mono",
+      "value": "ui-monospace, 'SF Mono', Menlo, monospace",
+      "use": "Code motif and token names. A utility, never a brand family.",
+      "status": "derived"
+    },
+    {
+      "group": "color",
+      "name": "partner-aws-orange",
+      "value": "#FF7600",
+      "use": "AWS services and Well-Architected credential marker",
+      "status": "derived",
+      "note": "AWS credential category colour read from the reference page. Not an Assembly brand colour and never used as one."
+    },
+    {
+      "group": "color",
+      "name": "partner-aws-violet",
+      "value": "#913DF4",
+      "use": "AWS Generative AI credential marker",
+      "status": "derived",
+      "note": "AWS credential category colour read from the reference page. Not an Assembly brand colour and never used as one."
+    },
+    {
+      "group": "color",
+      "name": "partner-aws-blue",
+      "value": "#3C92F9",
+      "use": "AWS technical accreditation marker",
+      "status": "derived",
+      "note": "AWS credential category colour read from the reference page. Not an Assembly brand colour and never used as one."
+    },
+    {
+      "group": "color",
+      "name": "partner-aws-slate",
+      "value": "#343F4D",
+      "use": "AWS practitioner credential marker",
+      "status": "derived",
+      "note": "AWS credential category colour read from the reference page. Not an Assembly brand colour and never used as one."
+    },
+    {
+      "group": "color",
+      "name": "motif-dot-red",
+      "value": "#E05A4F",
+      "use": "Code motif window dot",
+      "status": "derived",
+      "note": "Read from the reference page. Decorative, aria-hidden, and carries no meaning."
+    },
+    {
+      "group": "color",
+      "name": "motif-dot-amber",
+      "value": "#EDC24A",
+      "use": "Code motif window dot",
+      "status": "derived",
+      "note": "Read from the reference page. Decorative, aria-hidden, and carries no meaning."
+    },
+    {
+      "group": "color",
+      "name": "motif-dot-green",
+      "value": "#6FBF5B",
+      "use": "Code motif window dot",
+      "status": "derived",
+      "note": "Read from the reference page. Decorative, aria-hidden, and carries no meaning."
+    },
+    {
+      "group": "color",
+      "name": "ink-450",
+      "value": "#6F6F7A",
+      "use": "Muted text. Clears AA on white and on the raised surface.",
+      "status": "approved",
+      "note": "Approved as the light-theme text-muted value on 2026-08-11."
+    },
+    {
+      "group": "color",
+      "name": "amber-600",
+      "value": "#B95D00",
+      "use": "Accessible GenAI control boundary on light grounds.",
+      "status": "approved",
+      "note": "Approved as accent-ai-strong on 2026-08-11. The brighter amber-500 remains the fill."
+    }
+  ],
+  "aliases": [
+    {
+      "name": "surface-page",
+      "intent": "Root background",
+      "light": {
+        "ref": "white",
+        "alpha": 1,
+        "status": "approved"
+      },
+      "dark": {
+        "ref": "ink-950",
+        "alpha": 1,
+        "status": "approved"
+      }
+    },
+    {
+      "name": "surface-raised",
+      "intent": "Cards and panels",
+      "light": {
+        "ref": "ink-100",
+        "alpha": 1,
+        "status": "approved"
+      },
+      "dark": {
+        "ref": "#131318",
+        "alpha": 1,
+        "status": "conflict"
+      },
+      "conflict": {
+        "dark": {
+          "js": "ink-950",
+          "table": "#131318",
+          "resolution": "table",
+          "note": "ink-950 is the page ground. Using it for raised surfaces too would flatten card against page in dark mode, so the table value is the one that works. Needs sign-off as a real token."
+        }
+      }
+    },
+    {
+      "name": "surface-brand",
+      "intent": "Tinted brand sections",
+      "light": {
+        "ref": "blue-100",
+        "alpha": 1,
+        "status": "approved"
+      },
+      "dark": {
+        "ref": "blue-900",
+        "alpha": 1,
+        "status": "approved"
+      }
+    },
+    {
+      "name": "border-subtle",
+      "intent": "Hairlines and table rules",
+      "light": {
+        "ref": "ink-900",
+        "alpha": 0.12,
+        "status": "conflict"
+      },
+      "dark": {
+        "ref": "blue-100",
+        "alpha": 0.12,
+        "status": "conflict"
+      },
+      "conflict": {
+        "light": {
+          "js": "ink-900",
+          "table": "ink-900 12%",
+          "css": "rgba(0,40,255,.18)",
+          "resolution": "table",
+          "note": "Three readings disagree. The page CSS --rule is blue at 18%, the alias table says ink at 12%, the export drops opacity entirely."
+        },
+        "dark": {
+          "js": "blue-100",
+          "table": "blue-100 12%",
+          "resolution": "table",
+          "note": "Export drops the opacity."
+        }
+      }
+    },
+    {
+      "name": "border-brand",
+      "intent": "Label pills, focus outlines",
+      "light": {
+        "ref": "blue-700",
+        "alpha": 0.35,
+        "status": "conflict"
+      },
+      "dark": {
+        "ref": "blue-300",
+        "alpha": 0.4,
+        "status": "conflict"
+      },
+      "conflict": {
+        "light": {
+          "js": "blue-700",
+          "table": "blue-700 35%",
+          "css": "rgba(0,40,255,.34)",
+          "resolution": "table",
+          "note": "Table says 35%, page CSS --rule-strong is 34%, export drops opacity."
+        },
+        "dark": {
+          "js": "blue-300",
+          "table": "blue-300 40%",
+          "resolution": "table",
+          "note": "Export drops the opacity."
+        }
+      }
+    },
+    {
+      "name": "text-primary",
+      "intent": "Display through body",
+      "light": {
+        "ref": "ink-900",
+        "alpha": 1,
+        "status": "approved"
+      },
+      "dark": {
+        "ref": "blue-100",
+        "alpha": 1,
+        "status": "approved"
+      }
+    },
+    {
+      "name": "text-secondary",
+      "intent": "Supporting copy",
+      "light": {
+        "ref": "ink-700",
+        "alpha": 1,
+        "status": "approved"
+      },
+      "dark": {
+        "ref": "#A7A7B4",
+        "alpha": 1,
+        "status": "conflict"
+      },
+      "conflict": {
+        "dark": {
+          "js": "blue-300",
+          "table": "#A7A7B4",
+          "resolution": "table",
+          "note": "blue-300 is already text-brand in dark. Reusing it for secondary copy would collapse two meanings into one colour."
+        }
+      }
+    },
+    {
+      "name": "text-muted",
+      "intent": "System labels",
+      "light": {
+        "ref": "ink-450",
+        "alpha": 1,
+        "status": "approved"
+      },
+      "dark": {
+        "ref": "ink-400",
+        "alpha": 1,
+        "status": "approved"
+      }
+    },
+    {
+      "name": "text-brand",
+      "intent": "Links and brand emphasis",
+      "light": {
+        "ref": "blue-700",
+        "alpha": 1,
+        "status": "approved"
+      },
+      "dark": {
+        "ref": "blue-300",
+        "alpha": 1,
+        "status": "approved"
+      }
+    },
+    {
+      "name": "action-primary",
+      "intent": "Primary CTA field",
+      "light": {
+        "ref": "blue-700",
+        "alpha": 1,
+        "status": "approved"
+      },
+      "dark": {
+        "ref": "blue-700",
+        "alpha": 1,
+        "status": "approved"
+      }
+    },
+    {
+      "name": "action-primary-fg",
+      "intent": "Label on the primary CTA",
+      "light": {
+        "ref": "white",
+        "alpha": 1,
+        "status": "approved"
+      },
+      "dark": {
+        "ref": "white",
+        "alpha": 1,
+        "status": "approved"
+      }
+    },
+    {
+      "name": "accent-ai",
+      "intent": "GenAI capability fill",
+      "light": {
+        "ref": "amber-500",
+        "alpha": 1,
+        "status": "approved"
+      },
+      "dark": {
+        "ref": "amber-400",
+        "alpha": 1,
+        "status": "approved"
+      }
+    },
+    {
+      "name": "accent-ai-fg",
+      "intent": "Text on a GenAI fill",
+      "light": {
+        "ref": "ink-900",
+        "alpha": 1,
+        "status": "approved"
+      },
+      "dark": {
+        "ref": "ink-950",
+        "alpha": 1,
+        "status": "approved"
+      }
+    },
+    {
+      "name": "accent-ai-strong",
+      "intent": "Accessible GenAI control boundary",
+      "light": {
+        "ref": "amber-600",
+        "alpha": 1,
+        "status": "approved"
+      },
+      "dark": {
+        "ref": "amber-400",
+        "alpha": 1,
+        "status": "approved"
+      }
+    },
+    {
+      "name": "focus-ring",
+      "intent": "2px offset focus outline",
+      "light": {
+        "ref": "blue-600",
+        "alpha": 1,
+        "status": "approved"
+      },
+      "dark": {
+        "ref": "blue-300",
+        "alpha": 1,
+        "status": "approved"
+      }
+    }
+  ],
+  "typeRoles": [
+    {
+      "name": "text-display",
+      "size": "96-154px",
+      "line": "90%",
+      "track": "-6.5%",
+      "weight": 400,
+      "status": "approved"
+    },
+    {
+      "name": "text-title",
+      "size": "48-108px",
+      "line": "95%",
+      "track": "-5.5%",
+      "weight": 400,
+      "status": "approved"
+    },
+    {
+      "name": "text-intro",
+      "size": "20-31px",
+      "line": "120%",
+      "track": "-2.5%",
+      "weight": 300,
+      "status": "approved"
+    },
+    {
+      "name": "text-body",
+      "size": "16-20px",
+      "line": "145%",
+      "track": "-1%",
+      "weight": 400,
+      "status": "approved"
+    },
+    {
+      "name": "text-proof",
+      "size": "40-72px",
+      "line": "100%",
+      "track": "-5%",
+      "weight": 700,
+      "status": "approved"
+    },
+    {
+      "name": "text-label",
+      "size": "10-12px",
+      "line": "120%",
+      "track": "+20%",
+      "weight": 500,
+      "status": "approved"
+    }
+  ],
+  "breakpoints": [
+    {
+      "name": "sm",
+      "value": "620px",
+      "use": "Single column, nav collapses",
+      "status": "derived"
+    },
+    {
+      "name": "md",
+      "value": "760px",
+      "use": "Two column collapses to one",
+      "status": "derived"
+    },
+    {
+      "name": "lg",
+      "value": "900px",
+      "use": "Side rail unsticks",
+      "status": "derived"
+    },
+    {
+      "name": "xl",
+      "value": "1200px",
+      "use": "Container maximum",
+      "status": "approved"
+    }
+  ],
+  "layout": [
+    {
+      "name": "container",
+      "value": "1200px",
+      "use": "Content maximum width",
+      "status": "approved"
+    },
+    {
+      "name": "gutter",
+      "value": "40px",
+      "use": "Container side padding, 24px under md",
+      "status": "approved"
+    },
+    {
+      "name": "ease",
+      "value": "cubic-bezier(.2,.75,.2,1)",
+      "use": "The one easing curve",
+      "status": "approved"
+    }
+  ],
+  "gradients": [
+    {
+      "name": "gradient-announcement",
+      "value": "linear-gradient(90deg, #000000 0%, var(--color-blue-700) 100%)",
+      "use": "Site announcement bar and the announcement pill",
+      "status": "approved",
+      "note": "The black stop has no primitive behind it. See knowledge/conflicts.md."
+    },
+    {
+      "name": "gradient-logotype",
+      "value": "linear-gradient(180deg, var(--color-blue-700) 0%, var(--color-blue-100) 100%)",
+      "use": "Oversized letterform bleeds and stationery",
+      "status": "approved"
+    },
+    {
+      "name": "gradient-chapter",
+      "value": "linear-gradient(135deg, var(--color-blue-700) 0%, var(--color-blue-300) 100%)",
+      "use": "Chapter transitions and blue fields",
+      "status": "approved"
+    },
+    {
+      "name": "gradient-campaign",
+      "value": "linear-gradient(90deg, var(--color-blue-700) 0%, var(--color-blue-800) 100%)",
+      "use": "Campaign solid CTA fill",
+      "status": "derived",
+      "note": "Read from .cta--campaign.is-solid in the reference page. Not listed in the approved gradient set."
+    },
+    {
+      "name": "gradient-proof",
+      "value": "linear-gradient(90deg, var(--color-blue-700) 0%, var(--color-blue-100) 100%)",
+      "use": "Quantified proof cards and directional data bands",
+      "status": "derived",
+      "note": "Measured from assembly_fixes/fragments/frag.svg and its four exported screens."
+    }
+  ]
+}

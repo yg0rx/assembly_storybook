@@ -1,0 +1,28 @@
+/**
+ * Assembly brand system, CSS entry point.
+ *
+ * Import order matters: tokens first, then base, then components. A component
+ * file may only read custom properties. If a component needs a value that is
+ * not a token, the token is missing and the fix belongs in tokens.source.json.
+ */
+
+@import '../dist/tokens.css';
+@import './fonts.css';
+@import './base.css';
+@import './type.css';
+@import './pill.css';
+@import './cta.css';
+@import './catalog.css';
+@import './surface.css';
+@import './field.css';
+@import './segmented.css';
+@import './index-row.css';
+@import './table.css';
+@import './logo.css';
+@import './cobrand.css';
+@import './pattern.css';
+@import './code-motif.css';
+@import './presentations.css';
+@import './bullets.css';
+@import './proof-card.css';
+@import './voice.css';

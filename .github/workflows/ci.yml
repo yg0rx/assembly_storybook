@@ -1,0 +1,81 @@
+name: CI
+
+# Dormant until this repo has a remote. Add one and every check below runs on
+# push and on pull requests with no further setup.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  guardrails:
+    name: Tokens, contrast and accessibility
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build tokens
+        run: npm run build:tokens
+
+      # A generated file that differs from its source means someone edited dist/
+      # by hand or forgot to rebuild. Either way the commit is not reviewable.
+      - name: Verify generated output is committed
+        run: |
+          if [ -n "$(git status --porcelain dist/)" ]; then
+            echo "dist/ is out of date. Run npm run build:tokens and commit the result."
+            git --no-pager diff --stat dist/
+            exit 1
+          fi
+
+      - name: Lint tokens
+        run: npm run lint:tokens
+
+      - name: Contrast
+        run: npm run test:contrast
+
+      - name: Verify contrast matrix is committed
+        run: |
+          if [ -n "$(git status --porcelain knowledge/contrast-matrix.md)" ]; then
+            echo "contrast-matrix.md is out of date. Run npm run test:contrast and commit it."
+            exit 1
+          fi
+
+      - name: Install browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Accessibility
+        run: npm run test:a11y
+
+      - name: Upload Storybook build
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: storybook-static
+          path: storybook-static
+          retention-days: 7
+
+  security:
+    name: Dependency audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Fails on high and critical only. Known moderate advisories are recorded
+      # in SECURITY.md with the reason they are accepted.
+      - run: npm audit --audit-level=high

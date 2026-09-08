@@ -1,0 +1,9 @@
+node_modules/
+storybook-static/
+*.log
+.DS_Store
+.cache/
+test-results/
+
+# dist/ is committed on purpose: consumers of this system read the generated
+# tokens directly from the repo, so the built values must be reviewable in a diff.

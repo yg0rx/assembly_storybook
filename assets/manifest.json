@@ -1,0 +1,159 @@
+{
+  "$description": "Supplied Assembly artwork, preserved verbatim and never rebuilt.",
+  "extractedFrom": "projects/assembly_brand_book/brand-system.html",
+  "extracted": "2026-08-11",
+  "assets": [
+    {
+      "file": "logo-symbol.svg",
+      "bytes": 1489,
+      "hash": "88cc23938c50",
+      "alt": "Assembly symbol",
+      "note": "Wordmark glyphs removed 2026-08-13. They sat outside the symbol viewBox and bled a dark sliver into the right edge at render. The symbol path is untouched."
+    },
+    {
+      "file": "logo-previous-cloud-assembly.webp",
+      "bytes": 10006,
+      "hash": "576cfc3237c3",
+      "alt": "The previous Cloud Assembly logo, a teal and navy peak beside a two-word wordmark"
+    },
+    {
+      "file": "logo-primary-lockup.svg",
+      "bytes": 3589,
+      "hash": "acb6b01b39bf",
+      "alt": "Assembly primary lockup, symbol and wordmark, on white"
+    },
+    {
+      "file": "logo-primary-lockup-reversed.svg",
+      "bytes": 3589,
+      "hash": "e5aa8fbaf4a2",
+      "alt": "Assembly primary lockup reversed on Assembly Blue"
+    },
+    {
+      "file": "cobrand-descriptor-powered-by-aws.png",
+      "bytes": 14218,
+      "hash": "35f3b8f316ef",
+      "alt": "assembly, powered by aws"
+    },
+    {
+      "file": "cobrand-logotypes.png",
+      "bytes": 8406,
+      "hash": "cc398199c240",
+      "alt": "assembly and aws"
+    },
+    {
+      "file": "cobrand-compact.png",
+      "bytes": 4208,
+      "hash": "a66c39558c74",
+      "alt": "assembly symbol and aws"
+    },
+    {
+      "file": "cred-badge-aws-advanced.webp",
+      "bytes": 11310,
+      "hash": "347eeb9a57d4",
+      "alt": "AWS badge reading We are an AWS Advanced Partner"
+    },
+    {
+      "file": "linkedin-code-post-background.png",
+      "bytes": 15299,
+      "hash": "610e40f14f17",
+      "alt": "White LinkedIn post background with the Assembly powered by AWS lockup",
+      "source": "assembly_fixes/fixxxx/22-03.png"
+    },
+    {
+      "file": "pattern-05.png",
+      "bytes": 18815,
+      "hash": "b881d49c85f5",
+      "alt": "Approved Assembly pattern 05"
+    },
+    {
+      "file": "pattern-06.png",
+      "bytes": 32179,
+      "hash": "6d85f90350ad",
+      "alt": "Approved Assembly pattern 06"
+    },
+    {
+      "file": "pattern-07.png",
+      "bytes": 17134,
+      "hash": "4ab32bb39f11",
+      "alt": "Approved Assembly pattern 07"
+    },
+    {
+      "file": "pattern-08.png",
+      "bytes": 19263,
+      "hash": "9ebe5f3f8ceb",
+      "alt": "Approved Assembly pattern 08"
+    },
+    {
+      "file": "pattern-09.png",
+      "bytes": 15408,
+      "hash": "b4fb50b185fe",
+      "alt": "Approved Assembly pattern 09"
+    },
+    {
+      "file": "pattern-10.png",
+      "bytes": 9202,
+      "hash": "a202ec5950eb",
+      "alt": "Approved Assembly pattern 10"
+    },
+    {
+      "file": "logo-descriptor-lockup.png",
+      "bytes": 9317,
+      "hash": "31be015721fb",
+      "alt": "Assembly descriptor lockup, symbol, wordmark and CLOUD SOLUTIONS, full colour",
+      "source": "assembly_fixes/all versions/assembly_brand-versions-*.png, cropped to content with the white ground made transparent"
+    },
+    {
+      "file": "logo-descriptor-lockup-mono.png",
+      "bytes": 9072,
+      "hash": "4de9df41b2bc",
+      "alt": "Assembly descriptor lockup, mono ink",
+      "source": "assembly_fixes/all versions/assembly_brand-versions-*.png, cropped to content with the white ground made transparent"
+    },
+    {
+      "file": "logo-primary-lockup-mono.png",
+      "bytes": 6680,
+      "hash": "0fbf967c7cfc",
+      "alt": "Assembly primary lockup, mono ink",
+      "source": "assembly_fixes/all versions/assembly_brand-versions-*.png, cropped to content with the white ground made transparent"
+    },
+    {
+      "file": "logo-symbol-mono.png",
+      "bytes": 1100,
+      "hash": "8d1ce15085fa",
+      "alt": "Assembly symbol, mono ink",
+      "source": "assembly_fixes/all versions/assembly_brand-versions-*.png, cropped to content with the white ground made transparent"
+    },
+    {
+      "file": "slide-master-01.png",
+      "bytes": 19770,
+      "hash": "8923ba36f5cf",
+      "alt": "Assembly blue opening Slide Deck master",
+      "source": "brand-system.html slide-deck section"
+    },
+    {
+      "file": "slide-master-02.png",
+      "bytes": 25120,
+      "hash": "383112c6efad",
+      "alt": "Assembly light content Slide Deck master",
+      "source": "brand-system.html slide-deck section"
+    },
+    {
+      "file": "slide-master-03.png",
+      "bytes": 21426,
+      "hash": "4a8022ee1c57",
+      "alt": "Assembly light closing Slide Deck master",
+      "source": "brand-system.html slide-deck section"
+    },
+    {
+      "file": "slide-master-04.png",
+      "bytes": 20740,
+      "hash": "26a2d31cfc62",
+      "alt": "Assembly blue closing Slide Deck master",
+      "source": "brand-system.html slide-deck section"
+    }
+  ],
+  "notes": [
+    "The reversed co-brand lockup is not a separate file. The page reverses cobrand-logotypes.png with filter: brightness(0) invert(1), so both marks including the AWS smile turn white together.",
+    "Reversed logo states are not separate files either. Each family ships a colour master and a mono master; both reversed states are the colour master under the same filter, which is what stops a reversed mark drifting from the one it reverses."
+  ]
+}

@@ -1,0 +1,75 @@
+/**
+ * Bullet list. The standard Assembly bullet.
+ *
+ * Source: assembly_fixes/fragments/frag-02.png. The marker is a gradient shape
+ * drawn by the stylesheet, never a typographic glyph and never a flat blue disc.
+ * The gradient is what ties an ordinary list back to the identity, so it is the
+ * one detail that may not be substituted.
+ */
+
+.a-bullets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  font-family: var(--font-brand);
+}
+
+/* Inline is for short peer labels that read as a set. Long items keep the
+   stacked default, where the eye has one entry point per line. */
+.a-bullets--inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-6);
+}
+
+.a-bullets__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-primary);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+}
+
+.a-bullets__item::before {
+  content: '';
+  width: var(--space-3);
+  height: var(--space-3);
+  flex: none;
+  border-radius: var(--radius-full);
+  background: var(--gradient-proof);
+}
+
+/* Diamond introduces what comes next. It marks a single bridging line, so a
+   diamond list of more than one item is a misuse of the variant. */
+.a-bullets--diamond .a-bullets__item::before {
+  border-radius: 0;
+  transform: rotate(45deg);
+}
+
+/* Documentation layout for the composition story. Three components stacked in
+   a column, not a fourth component. */
+.a-bullets-demo {
+  max-width: 52rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  font-family: var(--font-brand);
+}
+
+.a-bullets-demo p {
+  margin: 0;
+  max-width: 56ch;
+  color: var(--text-primary);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+}
+
+.a-bullets-demo__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}

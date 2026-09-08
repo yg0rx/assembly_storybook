@@ -1,0 +1,182 @@
+/** Presentation masters. Supplied screen artwork remains fixed at 16:9. */
+
+.a-presentations {
+  width: 100%;
+  font-family: var(--font-brand);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.a-presentations__intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 66ch;
+}
+
+.a-presentations__intro p,
+.a-slide-master h3,
+.a-slide-master p {
+  margin: 0;
+}
+
+.a-presentations__intro > p:last-child,
+.a-slide-master p {
+  color: var(--text-secondary);
+}
+
+.a-presentations__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.a-slide-master {
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.a-slide-master img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-core);
+}
+
+.a-slide-master figcaption {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-3);
+}
+
+.a-slide-master figcaption > span {
+  color: var(--text-muted);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-line);
+  font-variant-numeric: tabular-nums;
+}
+
+.a-slide-master h3 {
+  color: var(--text-primary);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  font-weight: 500;
+}
+
+.a-slide-master p {
+  margin-top: var(--space-1);
+  max-width: 54ch;
+  font-size: var(--text-label-size);
+  line-height: 1.6;
+}
+
+.a-presentations__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.a-payload-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.a-payload-grid li {
+  padding: var(--space-4);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-core);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.a-payload-grid b {
+  color: var(--text-primary);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  font-weight: 500;
+}
+
+.a-payload-grid span {
+  color: var(--text-secondary);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.a-participation {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.a-participation article {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.a-participation h3,
+.a-participation p {
+  margin: 0;
+}
+
+.a-participation h3 {
+  color: var(--text-primary);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  font-weight: 500;
+}
+
+.a-participation p {
+  max-width: 54ch;
+  color: var(--text-secondary);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+/* Fixed height on both stages so the two variations stay level and the second
+   column does not sit lower than the first for want of artwork. */
+.a-participation__stage {
+  height: var(--space-11);
+  padding: var(--space-5);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-core);
+  display: grid;
+  place-items: center;
+}
+
+/* The partner-led order has no supplied lockup. The slot is drawn empty and
+   labelled rather than filled by rebuilding the pair, which the Partnership
+   rules forbid. */
+.a-participation__stage--pending {
+  border-style: dashed;
+}
+
+.a-participation__stage img {
+  max-width: 100%;
+  max-height: var(--space-11);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 760px) {
+  .a-presentations__grid,
+  .a-payload-grid,
+  .a-participation {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$description": "Contrast pairs that do not meet their WCAG threshold and are shipping anyway. Every entry needs a reason, a severity and an owner. scripts/test-contrast.mjs fails if a pair here starts passing, so a fix cannot leave a stale exception behind.",
+  "reviewed": "2026-08-11",
+  "owner": "Ygor Yan Braga",
+  "exceptions": [
+    {
+      "pair": "border-subtle on surface-page (light, ui)",
+      "ratio": 1.28,
+      "needs": 3,
+      "severity": "accepted",
+      "reason": "Hairlines and table rules are decorative separators, not UI components or meaningful graphics, so WCAG 1.4.11 does not apply. Every element they separate is identifiable without the rule.",
+      "condition": "Only valid while the rule is decorative. A border that is the sole indicator of a control's boundary must use border-brand or focus-ring instead."
+    },
+    {
+      "pair": "border-subtle on surface-page (dark, ui)",
+      "ratio": 1.29,
+      "needs": 3,
+      "severity": "accepted",
+      "reason": "Same as the light theme. Decorative separator, 1.4.11 does not apply.",
+      "condition": "Same condition as the light theme entry."
+    },
+    {
+      "pair": "border-brand on surface-page (light, ui)",
+      "ratio": 1.98,
+      "needs": 3,
+      "severity": "accepted",
+      "reason": "border-brand at 35% is a tint used to soften card and pill outlines. The components it borders are identified by their fill, label and position, not by the stroke.",
+      "condition": "border-brand must never be used as a focus indicator. focus-ring exists for that and measures 6.42:1. Flagged because the alias intent string in the source still says 'label pills, focus outlines'."
+    },
+    {
+      "pair": "border-brand on surface-page (dark, ui)",
+      "ratio": 2.17,
+      "needs": 3,
+      "severity": "accepted",
+      "reason": "Same as the light theme.",
+      "condition": "Same condition as the light theme entry."
+    }
+  ]
+}

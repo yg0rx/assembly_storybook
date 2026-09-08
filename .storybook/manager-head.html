@@ -1,0 +1,37 @@
+<title>Assembly brand system</title>
+<link rel="icon" type="image/svg+xml" href="./brand/logo-symbol.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap"
+  rel="stylesheet">
+
+<style>
+  /*
+    The theme API covers colour, type and the logo. These few rules cover what it
+    does not reach: the sidebar logo needs room to breathe, and the section roots
+    read better in the system's own label style.
+  */
+  .sidebar-header img {
+    max-height: 26px;
+    width: auto;
+  }
+
+  .sidebar-container [data-nodetype='root'] {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /*
+    Suppress Storybook's generic component and group glyphs so only the brand
+    icon from .storybook/icons.js shows. Targets the semantic type attribute,
+    not the emotion class hash, so it survives a Storybook upgrade.
+  */
+  .sidebar-container svg[type='component'],
+  .sidebar-container svg[type='group'] {
+    display: none;
+  }
+</style>

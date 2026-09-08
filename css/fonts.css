@@ -1,0 +1,20 @@
+/**
+ * Font loading.
+ *
+ * Rubik is bundled and self-hosted so the public brand voice cannot silently
+ * fall back in Storybook or in a consuming product. Nunito Sans, Helvetica Neue,
+ * and Amazon Ember remain optional because no shipped component consumes them.
+ *
+ * See fonts/README.md for licensing and the reserved job of each family.
+ */
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('../fonts/rubik-variable.woff2') format('woff2-variations');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Licensed faces are loaded by the production context that owns the licence.
+   The component package does not request missing or redistributable binaries. */

@@ -1,0 +1,97 @@
+/**
+ * Catalogue. The house way to show a component's whole variant set at once.
+ *
+ * One row per variant: the live thing on the left, the job it does on the right,
+ * a hairline between rows. It beats a loose row of specimens because the reader
+ * never has to guess which variant is for what, and every component that has
+ * more than three variants uses it rather than inventing its own display.
+ */
+
+.a-catalog {
+  width: 100%;
+  font-family: var(--font-brand);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3) var(--space-6);
+}
+
+/* One column when the variants are wide enough that a pair would crowd. */
+.a-catalog--single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.a-catalog__row {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.a-catalog__use {
+  margin: 0;
+  font-size: var(--text-label-size);
+  line-height: 1.6;
+  letter-spacing: var(--text-label-track);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/**
+ * Per-row code. The markup sits under the variant it belongs to rather than
+ * behind a canvas-level toggle, which is what lets the catalogue replace one
+ * story per variant instead of sitting above them.
+ */
+.a-catalog__actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: var(--space-4);
+}
+
+.a-catalog__actions button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-brand);
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: var(--text-label-weight);
+  letter-spacing: var(--text-label-track);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.a-catalog__actions button:hover {
+  color: var(--text-brand);
+}
+
+.a-catalog__actions button:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.a-catalog__code {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: var(--space-3);
+  border-radius: var(--radius-core);
+  background: var(--surface-raised);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.a-catalog__code[hidden] {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .a-catalog {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

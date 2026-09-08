@@ -1,0 +1,19 @@
+{
+  "$description": "Spacing values that sit off the 4px base and are kept anyway, because the component reproduces supplied artwork or a measured layout exactly. Every entry names the file, the values and the reason. scripts/lint-tokens.mjs fails if a listed value is no longer present, so a cleanup cannot leave a stale exception behind.",
+  "reviewed": "2026-08-15",
+  "owner": "Ygor Yan Braga",
+  "exceptions": [
+    {
+      "file": "css/cobrand.css",
+      "values": ["6px", "9px"],
+      "reason": "Caption gap and credential row gap measured from the supplied partnership layout. The co-brand set is delivered artwork and its spacing is part of what was approved.",
+      "severity": "accepted"
+    },
+    {
+      "file": "css/logo.css",
+      "values": ["2px"],
+      "reason": "The version caption sets a 2px gap between the label and the title, which reads as a single block rather than two stacked lines. On the 4px scale the pair separates.",
+      "severity": "accepted"
+    }
+  ]
+}

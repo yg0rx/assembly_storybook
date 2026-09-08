@@ -1,0 +1,103 @@
+/**
+ * Segmented control. One choice from a small, fixed set, where the options are
+ * peers and the whole set is worth showing at once.
+ *
+ * Why this exists: the brand book already builds one by hand. The Handover
+ * section has two of them, `.format-row` with `.format-btn[aria-pressed]`, for
+ * the four token formats and the six knowledge files. They were never a
+ * component, so every future one would be rebuilt slightly differently.
+ *
+ * Mechanic borrowed from beautiful-ui-five.vercel.app: a recessed track holds
+ * the set, and the selected option sits on a raised thumb. The brand book's
+ * version just turned the active button blue, which reads as several separate
+ * buttons that happen to be adjacent. Track and thumb say "these are one
+ * control, pick one" without needing a label to explain it.
+ *
+ * Not borrowed: their 19px tall targets, which fail WCAG 2.5.8. The floor here
+ * is 32px, and the small variant stops at the 24px minimum.
+ */
+
+.a-segmented {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  border-radius: var(--radius-full);
+  background: var(--surface-raised);
+  border: 1px solid var(--border-subtle);
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.a-segmented::-webkit-scrollbar {
+  display: none;
+}
+
+.a-segmented__option {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: var(--space-2) var(--space-4);
+  border: 0;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-brand);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.a-segmented__option:hover {
+  color: var(--text-primary);
+}
+
+/**
+ * The thumb. Selection is carried by fill and weight, not by hue, so the
+ * control still reads correctly in mono print and to anyone who cannot
+ * separate the two states by colour alone.
+ */
+.a-segmented__option[aria-pressed='true'],
+.a-segmented__option[aria-selected='true'] {
+  background: var(--surface-page);
+  color: var(--text-primary);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--text-primary) 12%, transparent);
+}
+
+/* Brand emphasis, for the one segmented control that is a primary choice on
+   its surface rather than a quiet filter. */
+.a-segmented--brand .a-segmented__option[aria-pressed='true'],
+.a-segmented--brand .a-segmented__option[aria-selected='true'] {
+  background: var(--action-primary);
+  color: var(--action-primary-fg);
+  box-shadow: none;
+}
+
+/* 24px is the WCAG 2.5.8 floor. Nothing interactive goes below it. */
+.a-segmented--small .a-segmented__option {
+  min-height: 24px;
+  padding: var(--space-1) var(--space-3);
+  font-size: 12px;
+}
+
+.a-segmented__option:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Full width, for a control that spans its container rather than sitting inline. */
+.a-segmented--fill {
+  display: flex;
+  width: 100%;
+}
+
+.a-segmented--fill .a-segmented__option {
+  flex: 1;
+}

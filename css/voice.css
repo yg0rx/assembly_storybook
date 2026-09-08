@@ -1,0 +1,117 @@
+.a-voice,
+.a-voice-order {
+  width: 100%;
+  font-family: var(--font-brand);
+}
+
+/* The statement and the trait grid are different heights and neither is the
+   other's caption, so each is centred on the other rather than hung from a
+   shared top edge. */
+.a-voice {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.72fr) minmax(0, 1.28fr);
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.a-voice header,
+.a-voice__grid {
+  align-self: center;
+}
+
+.a-voice header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.a-voice header p,
+.a-voice__grid h3,
+.a-voice__grid p,
+.a-voice-order h3,
+.a-voice-order p {
+  margin: 0;
+}
+
+.a-voice header > p:last-child,
+.a-voice__grid p,
+.a-voice-order p {
+  color: var(--text-secondary);
+}
+
+/* Three across, not two. The traits are a reference list beside the statement,
+   so they sit at body scale and let the opening claim stay the largest thing
+   in the composition. */
+.a-voice__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5) var(--space-4);
+}
+
+.a-voice__grid article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.a-voice__grid h3 {
+  color: var(--text-brand);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  font-weight: var(--text-label-weight);
+}
+
+.a-voice__grid p {
+  font-size: var(--text-label-size);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .a-voice__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .a-voice__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.a-voice-order {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.a-voice-order article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.a-voice-order span {
+  color: var(--text-muted);
+  font-size: var(--text-label-size);
+  font-variant-numeric: tabular-nums;
+}
+
+.a-voice-order h3 {
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  font-weight: 500;
+}
+
+.a-voice-order p {
+  font-size: var(--text-label-size);
+  line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+  .a-voice,
+  .a-voice__grid,
+  .a-voice-order {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+

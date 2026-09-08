@@ -1,0 +1,416 @@
+/**
+ * Storybook chrome only. Nothing here ships, which is why this file is not in
+ * css/ and is not covered by the token lint.
+ */
+
+.sb-surface {
+  background: var(--surface-page);
+  color: var(--text-primary);
+  padding: 24px;
+  margin: -16px;
+  min-height: 120px;
+}
+
+.sb-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.sb-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px 16px;
+  align-items: flex-start;
+}
+
+.sb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.sb-accent-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* One rule per accent, on the same four columns as the swatches above, so each
+   rule sits under the colour it governs. */
+.sb-accent-rules {
+  width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.sb-accent-rules > div {
+  min-width: 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sb-accent-rules dt {
+  font-size: 11px;
+  line-height: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-brand);
+}
+
+.sb-accent-rules dd {
+  margin: 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .sb-accent-rules {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.sb-gradient-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.sb-swatch {
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--surface-page);
+}
+
+@media (max-width: 700px) {
+  .sb-accent-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sb-gradient-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.sb-swatch__chip {
+  height: 72px;
+}
+
+.sb-swatch__meta {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sb-swatch__meta code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-brand);
+}
+
+.sb-swatch__meta b {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.sb-swatch__meta span {
+  font-size: 11px;
+  line-height: 16px;
+  color: var(--text-secondary);
+}
+
+.sb-note {
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--text-secondary);
+  max-width: 70ch;
+}
+
+.sb-flag {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 3px 7px;
+  background: var(--surface-brand);
+  color: var(--text-brand);
+}
+
+/* Decision comparison pages. Chrome only, removed with the decisions. */
+.sb-decision-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr));
+  gap: 8px 16px;
+}
+
+.sb-decision {
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--surface-page);
+}
+
+.sb-decision__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sb-decision__head b {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.sb-decision__meter {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.sb-decision__ratio {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.sb-decision__meter[data-verdict='pass'] .sb-decision__ratio,
+.sb-decision__meter[data-verdict='pass'] .sb-decision__verdict {
+  color: #1B7F3B;
+}
+
+.sb-decision__meter[data-verdict='fail'] .sb-decision__ratio,
+.sb-decision__meter[data-verdict='fail'] .sb-decision__verdict {
+  color: #B3261E;
+}
+
+.sb-decision__verdict {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.sb-flag[data-verdict='pass'] {
+  background: rgba(27, 127, 59, 0.1);
+  color: #1B7F3B;
+}
+
+.sb-flag[data-verdict='fail'] {
+  background: rgba(179, 38, 30, 0.1);
+  color: #B3261E;
+}
+
+.sb-sample {
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/**
+ * Docs hero. The args table is the control surface for the component above it,
+ * so the two sit side by side as one block. It is set 15 percent down because
+ * it is an instrument, not the subject. The controls column collapses entirely
+ * when a component disables controls, leaving the preview full width.
+ */
+.sb-docs-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 30rem);
+  gap: 16px;
+  align-items: start;
+}
+
+/* Names the hero as an interactive feature. Without it the args table read as
+   reference documentation rather than something to touch. */
+.sb-docs-hero__head {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.sb-docs-hero__head p {
+  margin: 0;
+  max-width: 68ch;
+  color: var(--text-secondary);
+  font-family: var(--font-brand);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+/* Nothing to personalise, so the invitation would be a lie. */
+.sb-docs-hero:has(> .sb-docs-hero__controls:empty) .sb-docs-hero__head {
+  display: none;
+}
+
+/* The Default column reads "-" on every row of every component here, because
+   these stories set args rather than argType defaults. In a side rail that is a
+   column of nothing squeezing the two that carry information. */
+.sb-docs-hero__controls .docblock-argstable th:nth-child(3),
+.sb-docs-hero__controls .docblock-argstable td:nth-child(3) {
+  display: none;
+}
+
+.sb-docs-hero:has(> .sb-docs-hero__controls:empty) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.sb-docs-hero__preview,
+.sb-docs-hero__controls {
+  min-width: 0;
+}
+
+.sb-docs-hero__controls:empty {
+  display: none;
+}
+
+.sb-docs-hero__controls {
+  zoom: 0.85;
+}
+
+.sb-docs-hero--invite-above,
+.sb-docs-hero--invite-below {
+  grid-template-rows: auto auto;
+}
+
+.sb-docs-hero--invite-above .sb-docs-hero__head {
+  grid-column: 1;
+  grid-row: 1;
+  margin-bottom: 0;
+}
+
+.sb-docs-hero--invite-above .sb-docs-hero__preview {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.sb-docs-hero--invite-above .sb-docs-hero__controls {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.sb-docs-hero--invite-below .sb-docs-hero__preview {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.sb-docs-hero--invite-below .sb-docs-hero__head {
+  grid-column: 1;
+  grid-row: 2;
+  margin-bottom: 0;
+}
+
+.sb-docs-hero--invite-below .sb-docs-hero__controls {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.sb-docs-page--pill .sb-docs-hero__controls {
+  grid-row: 2;
+}
+
+.sb-docs-buttons-demo {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sb-docs-hero--buttons .sb-docs-buttons-demo {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.sb-docs-hero--buttons .sb-docs-hero__controls {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.a-buttons-demo {
+  width: 100%;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-core);
+  overflow: hidden;
+}
+
+.a-buttons-demo__preview {
+  min-height: calc(var(--space-8) * 3);
+  padding: var(--space-7);
+  display: flex;
+  align-items: center;
+}
+
+.a-buttons-demo__note {
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--border-brand);
+  background: var(--surface-brand);
+  color: var(--text-primary);
+  font-family: var(--font-brand);
+  font-size: var(--text-label-size);
+  line-height: 1.6;
+}
+
+.a-buttons-demo__note strong {
+  font-weight: 500;
+}
+
+.sb-docs-page__stories {
+  margin-top: var(--space-4);
+}
+
+.sb-docs-page__stories > :first-child {
+  margin-top: 0 !important;
+}
+
+/* The blocks carry their own top margin, which double-spaces them inside a
+   grid row that is already gapped. */
+.sb-docs-hero .docblock-argstable-body,
+.sb-docs-hero > div > :first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 1000px) {
+  .sb-docs-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sb-docs-hero--invite-above .sb-docs-hero__head,
+  .sb-docs-hero--invite-above .sb-docs-hero__preview,
+  .sb-docs-hero--invite-above .sb-docs-hero__controls,
+  .sb-docs-hero--invite-below .sb-docs-hero__preview,
+  .sb-docs-hero--invite-below .sb-docs-hero__head,
+  .sb-docs-hero--invite-below .sb-docs-hero__controls {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .sb-docs-hero--buttons .sb-docs-buttons-demo,
+  .sb-docs-hero--buttons .sb-docs-hero__controls {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+}

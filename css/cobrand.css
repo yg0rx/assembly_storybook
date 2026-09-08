@@ -1,0 +1,142 @@
+/**
+ * Co-branding. An art direction, not a badge wall.
+ *
+ * These four are the supplied lockups, reproduced as delivered. Do not rebuild
+ * them by placing the two logos next to each other: optical alignment is equal
+ * cap height, and scaling to equal image width makes one mark read as borrowed.
+ */
+
+.a-cobrand-set {
+  font-family: var(--font-brand);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.a-cobrand {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-core);
+  overflow: hidden;
+}
+
+.a-cobrand__ground {
+  display: grid;
+  place-items: center;
+  padding: var(--space-7) var(--space-5);
+  min-height: 118px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.a-cobrand__ground--white {
+  background: var(--surface-page);
+}
+
+.a-cobrand__ground--blue {
+  background: var(--action-primary);
+  border-bottom-color: var(--action-primary);
+}
+
+.a-cobrand__lockup {
+  width: min(292px, 92%);
+  height: auto;
+}
+
+.a-cobrand__lockup--mid {
+  width: min(214px, 74%);
+}
+
+/* Below the 112px wordmark minimum, the symbol replaces the wordmark pair. */
+.a-cobrand__lockup--compact {
+  width: min(112px, 44%);
+}
+
+/* The reverse rule: the entire mark paints white on Assembly Blue, AWS smile
+   included. Never keep one mark in colour while the other reverses. This is why
+   there is no separate reversed asset. */
+.a-cobrand__lockup--reversed {
+  filter: brightness(0) invert(1);
+}
+
+.a-cobrand figcaption {
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.a-cobrand figcaption h3 {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.a-cobrand figcaption p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 19px;
+  color: var(--text-secondary);
+  max-width: 52ch;
+}
+
+/* Credential row. The colour of each marker is an AWS category colour and
+   carries no meaning on its own: the credential name beside it does that. */
+/* No min-height. The row is one badge and five markers, so a forced 240px box
+   left the content floating in empty space that carried no meaning. */
+.a-cred-row {
+  width: 100%;
+  padding: var(--space-4);
+  box-sizing: border-box;
+  font-family: var(--font-brand);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-4);
+}
+
+.a-cred-badge {
+  width: 172px;
+  height: auto;
+  flex: none;
+}
+
+.a-creds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-5);
+  max-width: 520px;
+  justify-content: center;
+}
+
+.a-cred {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  line-height: 19px;
+  white-space: nowrap;
+  color: var(--text-primary);
+}
+
+.a-cred i {
+  width: 19px;
+  height: 19px;
+  flex: none;
+  clip-path: polygon(0 0, 68% 0, 100% 32%, 100% 100%, 32% 100%, 0 68%);
+}
+
+.a-cred--services i { background: var(--color-partner-aws-orange); }
+.a-cred--genai i { background: var(--color-partner-aws-violet); }
+.a-cred--technical i { background: var(--color-partner-aws-blue); }
+.a-cred--practitioner i { background: var(--color-partner-aws-slate); }
+
+@media (max-width: 760px) {
+  .a-cobrand-set {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

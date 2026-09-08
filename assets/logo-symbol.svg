@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1875.87 298.82 63.42 63.42" width="63.42" height="63.42"><style>
+      .st0, .st1, .st2 {
+        fill: #fff;
+      }
+
+      .st0, .st3 {
+        letter-spacing: -.05em;
+      }
+
+      .st0, .st2 {
+        font-size: 11.74px;
+      }
+
+      .st0, .st2, .st4, .st5 {
+        font-family: Rubik-Regular, Rubik;
+      }
+
+      .st6 {
+        fill: #0028ff;
+      }
+
+      .st7 {
+        stroke-width: 1.03px;
+      }
+
+      .st7, .st8, .st9, .st10 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .st7, .st10 {
+        stroke: #000;
+      }
+
+      .st8 {
+        stroke-width: .52px;
+      }
+
+      .st8, .st9 {
+        stroke: #fff;
+      }
+
+      .st9 {
+        stroke-width: .67px;
+      }
+
+      .st11 {
+        fill: #EFF5FF;
+      }
+
+      .st10 {
+        stroke-width: .6px;
+      }
+
+      .st12 {
+        fill: #161615;
+      }
+
+      .st13 {
+        letter-spacing: -.05em;
+      }
+
+      .st14 {
+        letter-spacing: -.05em;
+      }
+
+      .st4 {
+        letter-spacing: -.05em;
+      }
+
+      .st4, .st5 {
+        font-size: 14.48px;
+      }
+
+      .st5 {
+        letter-spacing: -.05em;
+      }
+
+      .st15 {
+        fill: #0028FF;
+      }
+    </style><g xmlns="http://www.w3.org/2000/svg">
+    <polygon class="st15" points="1929.27 308.82 1929.27 352.21 1921.3 352.23 1921.28 328.85 1905.13 344.92 1909.93 344.94 1913.75 344.94 1913.75 352.24 1905.63 352.24 1885.87 352.21 1929.27 308.82" />
+  </g>
+  </svg>

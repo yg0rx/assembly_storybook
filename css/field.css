@@ -1,0 +1,62 @@
+/**
+ * Field. A real <label for>, always. Placeholder text is not a label, and the
+ * placeholder colour fails contrast on purpose because it is not content.
+ */
+
+.a-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.a-field label {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.a-field input,
+.a-field textarea,
+.a-field select {
+  border: 1.5px solid var(--action-primary);
+  border-radius: var(--radius-300);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-brand);
+  font-size: 15px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  background: var(--surface-page);
+}
+
+.a-field input::placeholder,
+.a-field textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.a-field__hint {
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--text-secondary);
+}
+
+/* Error state carries an icon or the word, never colour alone. */
+.a-field__error {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.a-field[data-invalid='true'] input,
+.a-field[data-invalid='true'] textarea {
+  border-color: var(--text-primary);
+  border-width: 2px;
+}
+
+.a-field input:disabled,
+.a-field textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
